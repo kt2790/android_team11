@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         transaction = fragmentManager.beginTransaction()
-        transaction.add(R.id.frameLayout, ContactDetailFragment())
+        transaction.add(R.id.frameLayout, HomeFragment())
         transaction.commit()
 
         setSupportActionBar(binding.mainToolbar)
