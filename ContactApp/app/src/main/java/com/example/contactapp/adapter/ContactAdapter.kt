@@ -23,7 +23,7 @@ class ContactAdapter(private val contactList : List<Contact>) : RecyclerView.Ada
 
 
         holder.name.text = contactList[position].name
-//        holder.profile.setImageResource(holder.binding.root.context.resources.getIdentifier(contactList[position].profile, "drawable", holder.binding.root.context.packageName))
+        holder.profile.setImageResource(holder.binding.root.context.resources.getIdentifier(contactList[position].profile, "drawable", holder.binding.root.context.packageName))
 
 
 
