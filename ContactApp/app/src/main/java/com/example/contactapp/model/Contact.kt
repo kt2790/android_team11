@@ -9,3 +9,4 @@ data class Contact (
         val profile: String,
         val favorite: Boolean
         )
+
