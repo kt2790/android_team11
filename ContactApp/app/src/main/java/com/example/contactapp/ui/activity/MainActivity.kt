@@ -11,6 +11,7 @@ import com.example.contactapp.R
 import com.example.contactapp.adapter.ViewPagerFragmentStateAdapter
 import com.example.contactapp.databinding.ActivityMainBinding
 import com.example.contactapp.ui.dialog.AddContactDialogFragment
+import com.example.contactapp.ui.fragment.ContactDetailFragment
 import com.example.contactapp.ui.fragment.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         transaction = fragmentManager.beginTransaction()
-        transaction.add(R.id.frameLayout, HomeFragment())
+        transaction.add(R.id.frameLayout, ContactDetailFragment())
         transaction.commit()
 
         setSupportActionBar(binding.mainToolbar)
