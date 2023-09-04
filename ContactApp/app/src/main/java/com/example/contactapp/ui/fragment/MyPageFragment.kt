@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.contactapp.R
 import com.example.contactapp.databinding.FragmentMyPageBinding
+import com.example.contactapp.manager.ContactManagerImpl
+import com.example.contactapp.model.Contact
 
 
 class MyPageFragment : Fragment() {
@@ -18,8 +20,23 @@ class MyPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMyPageBinding.inflate(inflater, container, false)
-        return inflater.inflate(R.layout.fragment_my_page, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+    val contactManagerImpl : ContactManagerImpl = ContactManagerImpl.getInstance()
+
+
+
+        val contactList = contactManagerImpl.getContactList()
+        val contact = contactList.first()
+
+        binding.Image.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.MyName.text = contact.name
+        binding.Mobile.text = contact.phone
+        binding.Event.text = contact.alarm.toString()
+        binding.Email.text = contact.email
+}
 }
