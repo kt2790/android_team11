@@ -31,15 +31,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Image">-->
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/first_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        app:strokeWidth="4dp"
-        app:strokeColor="#7D4595"
+        app:strokeWidth="2dp"
+        app:strokeColor="#645968"
         app:cardCornerRadius="25dp"
-        android:background="#E3DCEE"
+        app:cardBackgroundColor="#E3DCEE"
         app:layout_constraintTop_toBottomOf="@+id/Image">
 
         <LinearLayout
@@ -51,9 +56,8 @@
                 android:id="@+id/Mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="4dp"
-                android:gravity="center_vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:text="mobile"
@@ -61,39 +65,94 @@
                 android:textStyle="bold" />
 
             <TextView
-            android:id="@+id/Mobile_tx"
+            android:id="@+id/MobileTX"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="20dp"
             android:hint="Mobile"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="20sp" />
 
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/second_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#645968"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="#E3DCEE"
+        app:layout_constraintTop_toBottomOf="@+id/first_cardview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
     <TextView
         android:id="@+id/Event"
-        android:layout_width="405dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="30dp"
-        android:background="#E3DCEE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:text="Event"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_cardview" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/EventTx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Event"
+        android:textSize="20sp"
+        android:background="#E3DCEE"
+        app:layout_constraintEnd_toEndOf="@+id/Event"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="@+id/Event"
+        tools:layout_editor_absoluteY="491dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Event"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/third_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="30dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#645968"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="#E3DCEE"
+        app:layout_constraintTop_toBottomOf="@+id/second_cardview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
     <TextView
         android:id="@+id/Email"
-        android:layout_width="391dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:background="#E3DCEE"
         android:text="Email"
         android:textSize="20sp"
@@ -103,37 +162,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Event" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="312dp"
-        android:layout_height="44dp"
-        android:hint="Event"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/Event"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="@+id/Event"
-        tools:layout_editor_absoluteY="491dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Event"/>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="291dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="16dp"
+        android:id="@+id/EmailTx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="20dp"
         android:hint="Email"
+        android:background="#E3DCEE"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/Email"
         app:layout_constraintStart_toStartOf="@+id/Email"
         app:layout_constraintBottom_toBottomOf="@+id/Email"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        </LinearLayout>
 
+    </com.google.android.material.card.MaterialCardView>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
 
+<!--</ScrollView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
