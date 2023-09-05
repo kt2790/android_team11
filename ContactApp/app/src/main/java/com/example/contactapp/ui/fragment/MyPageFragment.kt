@@ -33,10 +33,10 @@ class MyPageFragment : Fragment() {
         val contactList = contactManagerImpl.getContactList()
         val contact = contactList.first()
 
-        binding.Image.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.Image.setImageResource(R.drawable.pic)
         binding.MyName.text = contact.name
-        binding.Mobile.text = contact.phone
-        binding.Event.text = contact.alarm.toString()
-        binding.Email.text = contact.email
+        binding.MobileTX.text = contact.phone
+        binding.EventTx.text = contact.alarm.toString()
+        binding.EmailTx.text = contact.email
 }
 }
