@@ -12,21 +12,25 @@
         android:id="@+id/Image"
         android:layout_width="408dp"
         android:layout_height="283dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_setting_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     
     <TextView
+        android:background="#A6DDDADA"
         android:id="@+id/MyName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
+        android:paddingBottom="20dp"
         android:text="MyName"
+        android:gravity="center"
         android:textStyle="bold"
         android:textSize="24sp"
+        android:textColor="#4E4646"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/Image" />
