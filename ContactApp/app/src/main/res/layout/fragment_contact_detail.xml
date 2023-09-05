@@ -91,6 +91,7 @@
                 android:id="@+id/detail_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="16dp"
                 android:text="010-1234-5678"
                 android:textSize="19sp"
                 android:textAlignment="center" />
@@ -106,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@id/cardview2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="fill"
         app:cardBackgroundColor="#E3DCEE"
         app:strokeColor="#BCB1C1"
@@ -135,6 +136,7 @@
                 android:id="@+id/detail_event_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="16dp"
                 android:textSize="19sp"
                 android:text="Event State"
                 android:textAlignment="center" />
@@ -150,10 +152,11 @@
         app:layout_constraintTop_toBottomOf="@id/cardview3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="fill"
         app:cardBackgroundColor="#E3DCEE"
-        app:strokeColor="#BCB1C1"
+        app:strokeColor="#170520"
+        app:strokeWidth="9dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="8dp">
 
@@ -179,6 +182,7 @@
                 android:id="@+id/detail_email_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="16dp"
                 android:text="test1@gmail.com"
                 android:textSize="19sp"
                 android:textAlignment="center" />
