@@ -12,7 +12,6 @@
         android:id="@+id/Image"
         android:layout_width="408dp"
         android:layout_height="283dp"
-        android:layout_marginTop="24dp"
         android:src="@drawable/ic_setting_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
