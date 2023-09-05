@@ -62,7 +62,7 @@
             android:paddingTop="8dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:backgroundTint="#E9E5E5"
+            android:backgroundTint="#E4DA76D5"
             android:textColor="@color/black"
             android:text="OFF"
             android:textSize="16dp" />
