@@ -35,7 +35,7 @@ class MyPageFragment : Fragment() {
 
         binding.Image.setImageResource(R.drawable.ic_launcher_foreground)
         binding.MyName.text = contact.name
-        binding.Mobile.text = contact.phone
+        binding.MobileTx.text = contact.phone
         binding.Event.text = contact.alarm.toString()
         binding.Email.text = contact.email
 }
