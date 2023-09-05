@@ -14,6 +14,9 @@ import com.example.contactapp.ui.dialog.AddContactDialogFragment
 import com.example.contactapp.ui.fragment.ContactDetailFragment
 import com.example.contactapp.ui.fragment.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,23 +27,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         transaction = fragmentManager.beginTransaction()
-        transaction.add(R.id.frameLayout, HomeFragment())
+        transaction.add(R.id.frameLayout, ContactDetailFragment())
         transaction.commit()
 
         setSupportActionBar(binding.mainToolbar)
         supportActionBar?.apply {
-            title = "Contact"
+            title = ""
             setVisible(true)
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.miSetting -> Toast.makeText(this, "Setting", Toast.LENGTH_LONG).show()
+            R.id.list_setting -> Toast.makeText(this, "ListType", Toast.LENGTH_LONG).show()
+            R.id.grid_setting -> Toast.makeText(this, "GridType", Toast.LENGTH_LONG).show()
         }
         return true
     }
