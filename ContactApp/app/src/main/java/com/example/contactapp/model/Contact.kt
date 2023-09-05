@@ -7,6 +7,6 @@ data class Contact (
         val email: String,
         val alarm: Int,
         val profile: String,
-        val favorite: Boolean
+        var favorite: Boolean
         )
 
