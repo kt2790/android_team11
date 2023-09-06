@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
 import com.example.contactapp.R
+import com.example.contactapp.adapter.ContactAdapter
 import com.example.contactapp.adapter.ViewPagerFragmentStateAdapter
 import com.example.contactapp.databinding.ActivityMainBinding
+import com.example.contactapp.model.Contact
 import com.example.contactapp.ui.dialog.AddContactDialogFragment
 import com.example.contactapp.ui.fragment.ContactDetailFragment
 import com.example.contactapp.ui.fragment.HomeFragment
@@ -54,4 +56,5 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.app_bar_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
 }

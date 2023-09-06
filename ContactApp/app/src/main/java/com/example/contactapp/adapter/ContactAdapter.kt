@@ -1,4 +1,5 @@
 package com.example.contactapp.adapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,6 +73,13 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         else
             holder.like.setImageResource(holder.binding.root.context.resources.getIdentifier("baseline_favorite_border_24", "drawable", holder.binding.root.context.packageName))
     }
+
+    fun setContactList(newContactList: List<Contact>) {
+        contactList = newContactList
+        notifyDataSetChanged()
+        Log.d("abcd", "setcontactList")
+    }
+
 
     inner class Holder(val binding: ContactListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val name = binding.txtListName
