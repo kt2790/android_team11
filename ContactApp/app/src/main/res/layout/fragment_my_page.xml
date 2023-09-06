@@ -18,22 +18,24 @@
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    
+
     <TextView
-        android:background="#A6DDDADA"
+        android:background="@drawable/gradient"
         android:id="@+id/MyName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
+        android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:text="MyName"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:textColor="#4E4646"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/Image" />
+
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -47,6 +49,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
+                android:layout_gravity="fill"
                 android:id="@+id/first_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,6 +94,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:layout_gravity="fill"
                 android:id="@+id/second_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,6 +146,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:layout_gravity="fill"
                 android:id="@+id/third_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
