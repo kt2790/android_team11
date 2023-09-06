@@ -19,9 +19,13 @@ import com.example.contactapp.manager.ContactManagerImpl
 class ContactListFragment : Fragment() {
 
     private var _binding: FragmentContactListBinding? = null
+    private val contactManager = ContactManagerImpl.getInstance()
+    private val contactList = contactManager.getContactList()
     private val binding get() = _binding!!
+    var adapter: ContactAdapter = ContactAdapter(contactList)
 
-//    private lateinit var linearLayoutManager: LinearLayoutManager
+
+    //    private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var gridLayoutManager: GridLayoutManager
 //    private lateinit var currentLayoutManager: RecyclerView.LayoutManager
 
@@ -41,9 +45,8 @@ class ContactListFragment : Fragment() {
 //        currentLayoutManager = linearLayoutManager
 //        recyclerView.layoutManager = currentLayoutManager
 
-        val contactManager = ContactManagerImpl.getInstance()
-        val contactList = contactManager.getContactList()
-        val adapter = ContactAdapter(contactList)
+
+        adapter = ContactAdapter(contactList)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = GridLayoutManager(requireActivity(), 2)
 

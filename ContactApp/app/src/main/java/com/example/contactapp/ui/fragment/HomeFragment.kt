@@ -34,7 +34,8 @@ class HomeFragment : Fragment() {
         }.attach()
 
         binding.btnAddcontact.setOnClickListener {
-            val dialog = AddContactDialogFragment()
+            val contactListFragment: ContactListFragment = (binding.vpContact.adapter as ViewPagerFragmentStateAdapter).getFragment(0) as ContactListFragment
+            val dialog = AddContactDialogFragment(contactListFragment)
             dialog.isCancelable = true
             dialog.show(requireActivity().supportFragmentManager, "ConfirmDialog")
         }

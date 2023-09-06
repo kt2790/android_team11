@@ -23,6 +23,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.DialogFragment
 import com.example.contactapp.R
+import com.example.contactapp.adapter.ContactAdapter
 import com.example.contactapp.databinding.FragmentAddContactDialogBinding
 import com.example.contactapp.manager.ContactManagerImpl
 import com.example.contactapp.ui.activity.MainActivity
@@ -34,7 +35,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class AddContactDialogFragment : DialogFragment() {
+class AddContactDialogFragment(private val contactListFragment: ContactListFragment) : DialogFragment() {
 
     private lateinit var binding: FragmentAddContactDialogBinding
     private var alarmNumber: Int = 0
@@ -51,21 +52,6 @@ class AddContactDialogFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.cancelBtn.setOnClickListener {
-            dismiss()
-        }
-
-        binding.saveBtn.setOnClickListener {
-
-            // EditText창에 입력된 텍스트를 가져옴
-            val name = binding.NameEdit.text.toString()
-            val phoneNumber = binding.NumberEdit.text.toString()
-            val email = binding.EmailEdit.text.toString()
-            val alarm = 0
-
-            // ContactManagerImpl 클래스의 싱글톤 객체를 가져옴
-            val contactManagerImpl: ContactManagerImpl = ContactManagerImpl.getInstance()
-            // 가져온 객체를 이용해서 새로운 데이터 생성
-            contactManagerImpl.createContact(name, phoneNumber, email, alarm)
             dismiss()
         }
 
@@ -100,6 +86,20 @@ class AddContactDialogFragment : DialogFragment() {
                     notification()
                 }
             }
+            // EditText창에 입력된 텍스트를 가져옴
+            val name = binding.NameEdit.text.toString()
+            val phoneNumber = binding.NumberEdit.text.toString()
+            val email = binding.EmailEdit.text.toString()
+            val alarm = 0
+
+
+            // ContactManagerImpl 클래스의 싱글톤 객체를 가져옴
+            val contactManagerImpl: ContactManagerImpl = ContactManagerImpl.getInstance()
+            // 가져온 객체를 이용해서 새로운 데이터 생성
+            contactManagerImpl.createContact(name, phoneNumber, email, alarm)
+
+            val updateContactList = contactManagerImpl.getContactList()
+            contactListFragment.adapter.setContactList(updateContactList)
             dismiss()
         }
     }
