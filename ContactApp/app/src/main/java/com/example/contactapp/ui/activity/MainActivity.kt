@@ -10,25 +10,14 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.FragmentTransaction
-import androidx.viewpager2.widget.ViewPager2
 import com.example.contactapp.R
-import com.example.contactapp.adapter.ViewPagerFragmentStateAdapter
 import com.example.contactapp.databinding.ActivityMainBinding
 import com.example.contactapp.manager.ContactManagerImpl
-import com.example.contactapp.model.Contact
-import com.example.contactapp.ui.activity.MainActivity.Companion.PERMISSION_REQUEST_CODE
-import com.example.contactapp.ui.dialog.AddContactDialogFragment
-import com.example.contactapp.ui.fragment.ContactDetailFragment
 import com.example.contactapp.ui.fragment.HomeFragment
-import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.util.ArrayList
 
-var count = 0
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -63,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             getContactsList()
         } else {
             if (shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
-                //
+                Toast.makeText(this, "주소록 접근 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
             } else {
                 ActivityCompat.requestPermissions(
                     this,
