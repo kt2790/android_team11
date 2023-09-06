@@ -66,9 +66,9 @@ class ContactListFragment : Fragment() {
                 val detailFragment = ContactDetailFragment()
                 val bundle = bundleOf()
                 detailFragment.arguments = bundle
-//                                detailFragment.arguments = Bundle().apply {
-//                    bundleOf(ITEM_OBJECT to dataList[position])
-//                }
+                                detailFragment.arguments = Bundle().apply {
+                    bundleOf("ITEM_ID" to adapter.getContact(position).id)
+                }
 
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, detailFragment)
