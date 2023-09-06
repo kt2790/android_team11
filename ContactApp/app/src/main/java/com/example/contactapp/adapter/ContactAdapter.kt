@@ -1,4 +1,5 @@
 package com.example.contactapp.adapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -118,8 +119,7 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         fun bind(item: Contact) {
             name.text = item.name
             profile.setImageResource(binding.root.context.resources.getIdentifier(contactList[adapterPosition].profile, "drawable", binding.root.context.packageName))
-//            Glide.with(itemView).load(profile).into(binding.imgList2Profile)
-//            Glide.with(itemView).load(like).into(binding.imgList2Like)
+
 
             if(contactList[adapterPosition].favorite)
                 like.setImageResource(binding.root.context.resources.getIdentifier("baseline_favorite_24", "drawable", binding.root.context.packageName))
@@ -138,7 +138,6 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
             name.text = item.name
             profile.setImageResource(binding.root.context.resources.getIdentifier(contactList[adapterPosition].profile, "drawable", binding.root.context.packageName))
 
-//            Glide.with(itemView).load(profile).into(binding.imgGridProfile)
 
 
 
@@ -150,7 +149,13 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         private const val multi_type1 = 1
         private const val multi_type2 = 2
         private const val multi_type3 = 3
-
     }
+
+    fun setContactList(newContactList: List<Contact>) {
+        contactList = newContactList
+        notifyDataSetChanged()
+        Log.d("abcd", "setcontactList")
+    }
+
 
 }

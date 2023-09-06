@@ -1,16 +1,12 @@
 package com.example.contactapp.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.contactapp.R
 import com.example.contactapp.adapter.ContactAdapter
 import com.example.contactapp.databinding.FragmentContactListBinding
@@ -19,9 +15,13 @@ import com.example.contactapp.manager.ContactManagerImpl
 class ContactListFragment : Fragment() {
 
     private var _binding: FragmentContactListBinding? = null
+    private val contactManager = ContactManagerImpl.getInstance()
+    private val contactList = contactManager.getContactList()
     private val binding get() = _binding!!
+    var adapter: ContactAdapter = ContactAdapter(contactList)
 
-//    private lateinit var linearLayoutManager: LinearLayoutManager
+
+    //    private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var gridLayoutManager: GridLayoutManager
 //    private lateinit var currentLayoutManager: RecyclerView.LayoutManager
 
@@ -41,9 +41,6 @@ class ContactListFragment : Fragment() {
 //        currentLayoutManager = linearLayoutManager
 //        recyclerView.layoutManager = currentLayoutManager
 
-        val contactManager = ContactManagerImpl.getInstance()
-        val contactList = contactManager.getContactList()
-        val adapter = ContactAdapter(contactList)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = GridLayoutManager(requireActivity(), 2)
 
