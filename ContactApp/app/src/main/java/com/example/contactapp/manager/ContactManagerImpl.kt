@@ -1,6 +1,7 @@
 package com.example.contactapp.manager
 
 import com.example.contactapp.model.Contact
+import android.net.Uri
 
 /**
  *
@@ -18,10 +19,10 @@ class ContactManagerImpl private constructor() : ContactManager {
      *
      */
     init {
-        contactList.add(Contact(id++, "test3", "01023415253", "test1@gmail.com", 0, "ic_launcher_foreground", false))
-        contactList.add(Contact(id++, "test2", "01011112223", "test2@gmail.com", 0, "ic_launcher_foreground", false))
-        contactList.add(Contact(id++, "test1", "01034562233", "test3@gmail.com", 0, "ic_launcher_foreground", false))
-        contactList.add(Contact(id++, "test4", "01026412253", "test4@gmail.com", 0, "ic_launcher_foreground", false))
+        contactList.add(Contact(id++, "test3", "01023415253", "test1@gmail.com", 0, "pepe1", false))
+        contactList.add(Contact(id++, "test2", "01011112223", "test2@gmail.com", 0, "pepe13)", false))
+        contactList.add(Contact(id++, "test1", "01034562233", "test3@gmail.com", 0, "pepe17", false))
+        contactList.add(Contact(id++, "test4", "01026412253", "test4@gmail.com", 0, "pepe19", false))
         contactList.add(Contact(id++, "test5", "01021410253", "test5@gmail.com", 0, "ic_launcher_foreground", false))
     }
     override fun createContact(name: String, phone: String, email: String, alarm: Int) {
@@ -87,3 +88,6 @@ class ContactManagerImpl private constructor() : ContactManager {
 
 
 }
+
+val imagePath = "\\app\\src\\main\\res\\drawable"
+val imageUri = Uri.parse(imagePath)
