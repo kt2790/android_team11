@@ -40,6 +40,18 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
     private lateinit var binding: FragmentAddContactDialogBinding
     private var alarmNumber: Int = 0
 
+    // 버튼의 스타일을 초기화하는 함수
+    private fun resetButtonStyle(button: Button) {
+        button.setBackgroundColor(Color.parseColor("#E9E5E5"))
+        button.setTextColor(Color.parseColor("#000000"))
+    }
+
+    // 버튼의 스타일을 변경하는 함수
+    private fun setButtonState(selectedButton: Button) {
+        selectedButton.setBackgroundColor(Color.parseColor("#499EE3"))
+        selectedButton.setTextColor(Color.parseColor("#FFFFFF"))
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,28 +63,32 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val buttons = listOf(
+            binding.offbtn,
+            binding.fivebtn,
+            binding.tenBtn,
+            binding.thirtyBtn
+        )
+
+        setButtonState(binding.offbtn)
+
+        buttons.forEach { button ->
+            button.setOnClickListener {
+                buttons.filterNot { it == button }.forEach { resetButtonStyle(it) }
+
+                setButtonState(button)
+
+                when (button) {
+                    binding.offbtn -> alarmNumber = 0
+                    binding.fivebtn -> alarmNumber = 1
+                    binding.tenBtn -> alarmNumber = 2
+                    binding.thirtyBtn -> alarmNumber = 3
+                }
+            }
+        }
+
         binding.cancelBtn.setOnClickListener {
             dismiss()
-        }
-
-        binding.offbtn.setOnClickListener {
-            setButtonState(binding.offbtn)
-            alarmNumber = 0
-        }
-
-        binding.fivebtn.setOnClickListener {
-            setButtonState(binding.fivebtn)
-            alarmNumber = 1
-        }
-
-        binding.tenBtn.setOnClickListener {
-            setButtonState(binding.tenBtn)
-            alarmNumber = 2
-        }
-
-        binding.thirtyBtn.setOnClickListener {
-            setButtonState(binding.thirtyBtn)
-            alarmNumber = 3
         }
 
         binding.saveBtn.setOnClickListener {
@@ -153,19 +169,10 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
     }
 
 
+
+
     // btn 클릭 시 색상 변경
-    private fun setButtonState(selectedButton: Button) {
-        binding.offbtn.setBackgroundColor(Color.parseColor("#FFC0C2C3"))
 
-        binding.fivebtn.setBackgroundColor(Color.parseColor("#FFC0C2C3"))
-
-        binding.tenBtn.setBackgroundColor(Color.parseColor("#FFC0C2C3"))
-
-        binding.thirtyBtn.setBackgroundColor(Color.parseColor("#FFC0C2C3"))
-
-        selectedButton.setBackgroundColor(Color.parseColor("#FF499EE3"))
-        selectedButton.setTextColor(Color.parseColor("#FFE9E5E5"))
-    }
 
     // dialog size 조절
     override fun onStart() {
