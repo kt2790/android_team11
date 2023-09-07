@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.contactapp.R
 import com.example.contactapp.adapter.ViewPagerFragmentStateAdapter
@@ -18,6 +19,7 @@ const val MY_PAGE = 1
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    lateinit var adapter: ViewPagerFragmentStateAdapter
     private var title = arrayOf("CONTACT", "MY PAGE")
 
     override fun onCreateView(
@@ -25,8 +27,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        adapter = ViewPagerFragmentStateAdapter(requireActivity())
 
-        binding.vpContact.adapter = ViewPagerFragmentStateAdapter(requireActivity())
+        binding.vpContact.adapter = adapter
         binding.vpContact.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
         TabLayoutMediator(binding.mainTab, binding.vpContact) { tab, position ->

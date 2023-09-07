@@ -5,10 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contactapp.R
 import com.example.contactapp.databinding.ContactListItem2Binding
 import com.example.contactapp.databinding.ContactListItemBinding
 import com.example.contactapp.databinding.FragmentContactGridListBinding
+import com.example.contactapp.databinding.FragmentContactListBinding
 import com.example.contactapp.model.Contact
 
 
@@ -24,7 +27,7 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
     }
 
     var itemClick : ItemClick? = null
-    var layoutType = 2
+    var layoutType = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             RecyclerView.ViewHolder {
@@ -94,18 +97,7 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
 
         fun bind(item: Contact) {
             name.text = item.name
-
             profile.setImageResource(binding.root.context.resources.getIdentifier(contactList[adapterPosition].profile, "drawable", binding.root.context.packageName))
-
-//            if() {
-//                profile.setImageResource(
-//                    binding.root.context.resources.getIdentifier(
-//                        contactList[adapterPosition].profile,
-//                        "drawable",
-//                        binding.root.context.packageName
-//                    )
-//                )
-//            }
 
 //            Glide.with(itemView).load(profile).into(binding.imgListProfile)
 //            Glide.with(itemView).load(like).into(binding.imgListLike)
@@ -151,11 +143,11 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         }
     }
     companion object {
-        private const val VIEW_TYPE_LINEAR = 1
-        private const val VIEW_TYPE_GRID = 2
-        private const val multi_type1 = 1
-        private const val multi_type2 = 2
-        private const val multi_type3 = 3
+        const val VIEW_TYPE_LINEAR = 1
+        const val VIEW_TYPE_GRID = 2
+        const val multi_type1 = 1
+        const val multi_type2 = 2
+        const val multi_type3 = 3
     }
 
     fun setContactList(newContactList: List<Contact>) {
