@@ -3,17 +3,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.contactapp.R
 import com.example.contactapp.databinding.ContactListItem2Binding
 import com.example.contactapp.databinding.ContactListItemBinding
 import com.example.contactapp.databinding.FragmentContactGridListBinding
 import com.example.contactapp.databinding.FragmentContactListBinding
 import com.example.contactapp.model.Contact
+import java.util.Collections
 
 
 class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -29,6 +32,7 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
 
     var itemClick : ItemClick? = null
     var layoutType = 2
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             RecyclerView.ViewHolder {
@@ -149,6 +153,8 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         private const val multi_type1 = 1
         private const val multi_type2 = 2
         private const val multi_type3 = 3
+
+
     }
 
     fun setContactList(newContactList: List<Contact>) {
@@ -156,6 +162,5 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         notifyDataSetChanged()
         Log.d("abcd", "setcontactList")
     }
-
 
 }
