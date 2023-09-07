@@ -141,6 +141,7 @@ class ContactAdapter(private var contactList: List<Contact>) :
 
         fun bind(item: Contact) {
             name.text = item.name
+            Log.d("ds","holder1,item.name = ${item.name}")
             profile.setImageResource(
                 binding.root.context.resources.getIdentifier(
                     contactList[adapterPosition].profile,
@@ -203,6 +204,7 @@ class ContactAdapter(private var contactList: List<Contact>) :
 
         fun bind(item: Contact) {
             name2.text = item.name
+            Log.d("ds","holder2,item.name = ${item.name}")
             profile.setImageResource(
                 binding.root.context.resources.getIdentifier(
                     contactList[adapterPosition].profile,
