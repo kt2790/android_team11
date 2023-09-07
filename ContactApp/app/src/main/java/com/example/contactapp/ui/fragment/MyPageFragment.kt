@@ -9,6 +9,7 @@ import com.example.contactapp.R
 import com.example.contactapp.databinding.FragmentMyPageBinding
 import com.example.contactapp.manager.ContactManagerImpl
 import com.example.contactapp.model.Contact
+import com.example.contactapp.ui.activity.MainActivity
 
 
 class MyPageFragment : Fragment() {
@@ -20,9 +21,14 @@ class MyPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMyPageBinding.inflate(inflater, container, false)
+        (requireActivity() as MainActivity).hideToolbar()
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).hideToolbar()
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
