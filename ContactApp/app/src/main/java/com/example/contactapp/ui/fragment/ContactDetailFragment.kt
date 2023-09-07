@@ -36,12 +36,12 @@ class ContactDetailFragment : Fragment() {
 
     private fun initializeView() {
         val contact = contactManagerImpl.getContactById(itemId)!!
-
+        val profileImg = contact.profile.ifEmpty { "pic" }
         binding.detailName.text = contact.name
         binding.detailEventState.text = contact.alarm.toString()
         binding.detailPhoneNumber.text = contact.phone
         binding.detailEmailText.text = contact.email
-        binding.detailProfileImg.setImageResource(resources.getIdentifier(contact.profile, "drawable", binding.root.context.packageName))
+        binding.detailProfileImg.setImageResource(resources.getIdentifier(profileImg, "drawable", binding.root.context.packageName))
 
         binding.detailMsgBtn.setOnClickListener {
             val smsUri = Uri.parse("smsto:" + contact.phone)
