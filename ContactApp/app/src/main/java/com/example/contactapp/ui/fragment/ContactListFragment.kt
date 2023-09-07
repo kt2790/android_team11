@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,6 +37,9 @@ class ContactListFragment : Fragment() {
     ): View? {
         _binding = FragmentContactListBinding.inflate(inflater, container, false)
         recyclerView = binding.recyclerview
+        val dividerItemDecoration =
+            DividerItemDecoration(requireActivity(), LinearLayoutManager.VERTICAL)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
 
 
