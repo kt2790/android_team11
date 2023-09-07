@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.contactapp.R
 import com.example.contactapp.databinding.ContactListItem2Binding
 import com.example.contactapp.databinding.ContactListItemBinding
@@ -28,7 +27,7 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
     }
 
     var itemClick : ItemClick? = null
-    var layoutType = 2
+    var layoutType = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             RecyclerView.ViewHolder {
@@ -144,11 +143,11 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
         }
     }
     companion object {
-        private const val VIEW_TYPE_LINEAR = 1
-        private const val VIEW_TYPE_GRID = 2
-        private const val multi_type1 = 1
-        private const val multi_type2 = 2
-        private const val multi_type3 = 3
+        const val VIEW_TYPE_LINEAR = 1
+        const val VIEW_TYPE_GRID = 2
+        const val multi_type1 = 1
+        const val multi_type2 = 2
+        const val multi_type3 = 3
     }
 
     fun setContactList(newContactList: List<Contact>) {
