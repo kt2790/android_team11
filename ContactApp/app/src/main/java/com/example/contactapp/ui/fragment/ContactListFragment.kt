@@ -105,7 +105,7 @@ class ContactListFragment : Fragment() {
                     adapter.layoutType = ContactAdapter.VIEW_TYPE_LINEAR
                 }
                 2 -> {
-                    recyclerView.layoutManager = GridLayoutManager(requireActivity(), 2)
+                    recyclerView.layoutManager = GridLayoutManager(requireActivity(), 3)
                     adapter.layoutType = ContactAdapter.VIEW_TYPE_GRID
                 }
             }
