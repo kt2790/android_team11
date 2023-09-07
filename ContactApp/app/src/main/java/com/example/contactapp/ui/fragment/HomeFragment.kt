@@ -43,6 +43,9 @@ class HomeFragment : Fragment() {
             dialog.isCancelable = true
             dialog.show(requireActivity().supportFragmentManager, "ConfirmDialog")
 
+            dialog.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogStyle)
+
+
         }
 
         return binding.root
