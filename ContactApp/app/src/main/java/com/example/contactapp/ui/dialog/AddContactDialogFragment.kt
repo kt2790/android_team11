@@ -48,7 +48,11 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
 
     // 버튼의 스타일을 변경하는 함수
     private fun setButtonState(selectedButton: Button) {
+   
         selectedButton.setBackgroundColor(Color.parseColor("#FFB99AF1"))
+
+        
+
         selectedButton.setTextColor(Color.parseColor("#FFFFFF"))
     }
 
@@ -76,7 +80,9 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
             button.setOnClickListener {
                 buttons.filterNot { it == button }.forEach { resetButtonStyle(it) }
 
+
                 setButtonState(button)
+
 
                 when (button) {
                     binding.offbtn -> alarmNumber = 0
@@ -167,8 +173,6 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
 
         manager.notify(11, builder.build())
     }
-
-
 
 
     // btn 클릭 시 색상 변경

@@ -42,7 +42,9 @@ class HomeFragment : Fragment() {
             val dialog = AddContactDialogFragment(contactListFragment)
             dialog.isCancelable = true
             dialog.show(requireActivity().supportFragmentManager, "ConfirmDialog")
+
             dialog.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogStyle)
+
 
         }
 

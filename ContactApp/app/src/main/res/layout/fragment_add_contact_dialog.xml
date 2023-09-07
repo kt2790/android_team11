@@ -74,11 +74,14 @@
         android:paddingBottom="14dp"
         android:paddingStart="35dp"
         android:paddingEnd="35dp"
+
+       
         android:text="OFF"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailEdit" />
+
 
     <Button
         android:id="@+id/fivebtn"
@@ -106,6 +109,9 @@
         android:padding="13dp"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
+
+
+
         android:text="10분 뒤 알림"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -128,6 +134,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/offbtn" />
 
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cancelBtn"
         android:layout_width="wrap_content"
@@ -140,6 +147,7 @@
         android:paddingEnd="50dp"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
+
         android:text="CANCEL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,6 +165,7 @@
         android:paddingEnd="60dp"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
+
         android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
