@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactapp.databinding.ContactListItem2Binding
 import com.example.contactapp.databinding.ContactListItemBinding
-import com.example.contactapp.databinding.FragmentContactGridListBinding
+import com.example.contactapp.databinding.FragmentContactGridListNameBinding
 import com.example.contactapp.model.Contact
 
 
@@ -50,7 +50,7 @@ class ContactAdapter(private var contactList: List<Contact>) :
             }
 
             else -> {
-                val binding = FragmentContactGridListBinding.inflate(
+                val binding = FragmentContactGridListNameBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent, false
                 )
@@ -197,12 +197,12 @@ class ContactAdapter(private var contactList: List<Contact>) :
     inner class MultiViewHolder2(val binding: ContactListItem2Binding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        private val name: TextView = binding.txtList2Name
+        private val name2: TextView = binding.txtList2Name
         private val profile: ImageView = binding.imgList2Profile
         private val like: ImageView = binding.imgList2Like
 
         fun bind(item: Contact) {
-            name.text = item.name
+            name2.text = item.name
             profile.setImageResource(
                 binding.root.context.resources.getIdentifier(
                     contactList[adapterPosition].profile,
@@ -256,7 +256,7 @@ class ContactAdapter(private var contactList: List<Contact>) :
         }
     }
 
-    inner class MultiViewHolder3(val binding: FragmentContactGridListBinding) :
+    inner class MultiViewHolder3(val binding: FragmentContactGridListNameBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         private val name: TextView = binding.txtGridName
