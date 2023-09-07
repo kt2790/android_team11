@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.contactapp.databinding.FragmentContactDetailBinding
 import com.example.contactapp.manager.ContactManagerImpl
 import com.example.contactapp.ui.activity.MainActivity
+import com.example.contactapp.util.NotificationConvert
 
 class ContactDetailFragment : Fragment() {
 
@@ -36,9 +37,9 @@ class ContactDetailFragment : Fragment() {
 
     private fun initializeView() {
         val contact = contactManagerImpl.getContactById(itemId)!!
-        val profileImg = contact.profile.ifEmpty { "pic" }
+        val profileImg = contact.profile.ifEmpty { "pepe8" }
         binding.detailName.text = contact.name
-        binding.detailEventState.text = contact.alarm.toString()
+        binding.detailEventState.text = NotificationConvert.convert(contact.alarm)
         binding.detailPhoneNumber.text = contact.phone
         binding.detailEmailText.text = contact.email
         binding.detailProfileImg.setImageResource(resources.getIdentifier(profileImg, "drawable", binding.root.context.packageName))

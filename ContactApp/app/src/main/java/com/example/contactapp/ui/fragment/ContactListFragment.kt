@@ -6,22 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contactapp.R
 import com.example.contactapp.adapter.ContactAdapter
+import com.example.contactapp.adapter.ContactListItemHelper
 import com.example.contactapp.databinding.FragmentContactListBinding
 import com.example.contactapp.manager.ContactManagerImpl
+import com.example.contactapp.model.Contact
 import com.example.contactapp.ui.activity.MainActivity
+import com.example.contactapp.ui.dialog.ContactDeleteListener
 
-class ContactListFragment : Fragment() {
+class ContactListFragment : Fragment(), ContactDeleteListener {
 
     private var _binding: com.example.contactapp.databinding.FragmentContactListBinding? = null
     private val contactManager = ContactManagerImpl.getInstance()
     private val contactList = contactManager.getContactList()
     private val binding get() = _binding!!
-    var adapter: ContactAdapter = ContactAdapter(contactList)
+    lateinit var adapter: ContactAdapter
     lateinit var recyclerView: RecyclerView
+    lateinit var itemTouchHelper: ItemTouchHelper
 
 
     //    private lateinit var linearLayoutManager: LinearLayoutManager
@@ -47,10 +52,12 @@ class ContactListFragment : Fragment() {
 //        recyclerView.layoutManager = currentLayoutManager
 
 
-        adapter = ContactAdapter(contactList)
+        adapter = ContactAdapter(contactList, this, requireActivity())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
 
+        itemTouchHelper = ItemTouchHelper(ContactListItemHelper(requireActivity(), adapter))
+        itemTouchHelper.attachToRecyclerView(recyclerView)
 
 //        binding.changeButton.setOnClickListener {
 //
@@ -112,6 +119,11 @@ class ContactListFragment : Fragment() {
         super.onDestroyView()
         (requireActivity() as MainActivity).hideToolbar()
         _binding = null
+    }
+
+    override fun contactDeleteListener(contact: Contact) {
+        contactManager.deleteContactById(contact.id)
+        adapter.setContactList(contactManager.getContactList())
     }
 
 }

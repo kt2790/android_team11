@@ -2,6 +2,7 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -36,12 +37,16 @@
             android:id="@+id/btn_addcontact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="70dp"
+
+            android:backgroundTint="@color/floatingbtn_color"
             android:clickable="true"
             android:contentDescription="addTodo"
-            android:backgroundTint="@color/floatingbtn_color"
-            android:src="@drawable/ic_launcher_foreground"
+            android:foregroundGravity="center"
+            app:maxImageSize="30dp"
+            android:src="@drawable/ic_add_foreground"
+            app:fabCustomSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

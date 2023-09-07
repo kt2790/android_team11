@@ -41,7 +41,7 @@
             android:layout_height="match_parent"
             android:contentDescription="profile_img"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/pic" />
 
         <TextView
             android:background="@drawable/gradient"

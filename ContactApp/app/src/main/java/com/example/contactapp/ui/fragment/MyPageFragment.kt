@@ -10,6 +10,7 @@ import com.example.contactapp.databinding.FragmentMyPageBinding
 import com.example.contactapp.manager.ContactManagerImpl
 import com.example.contactapp.model.Contact
 import com.example.contactapp.ui.activity.MainActivity
+import com.example.contactapp.util.NotificationConvert
 
 
 class MyPageFragment : Fragment() {
@@ -39,10 +40,10 @@ class MyPageFragment : Fragment() {
         val contactList = contactManagerImpl.getContactList()
         val contact = contactList.first()
 
-        binding.Image.setImageResource(R.drawable.pic)
+        binding.Image.setImageResource(R.drawable.pepe9)
         binding.MyName.text = contact.name
         binding.MobileTX.text = contact.phone
-        binding.EventTx.text = contact.alarm.toString()
+        binding.EventTx.text = NotificationConvert.convert(contact.alarm)
         binding.EmailTx.text = contact.email
 }
 }

@@ -19,14 +19,14 @@ class ContactManagerImpl private constructor() : ContactManager {
      *
      */
     init {
-        contactList.add(Contact(id++, "test3", "01023415253", "test1@gmail.com", 0, "pepe1", false))
-        contactList.add(Contact(id++, "test2", "01011112223", "test2@gmail.com", 0, "pepe13)", false))
-        contactList.add(Contact(id++, "test1", "01034562233", "test3@gmail.com", 0, "pepe17", false))
-        contactList.add(Contact(id++, "test4", "01026412253", "test4@gmail.com", 0, "pepe19", false))
-        contactList.add(Contact(id++, "test5", "01021410253", "test5@gmail.com", 0, "ic_launcher_foreground", false))
+        contactList.add(Contact(id++, "배근태", "01023415253", "test1@gmail.com", 0, "pepe9", false))
+        contactList.add(Contact(id++, "김현준", "01011112223", "test2@gmail.com", 0, "pepe7", false))
+        contactList.add(Contact(id++, "김지견", "01034562233", "test3@gmail.com", 0, "pepe14", false))
+        contactList.add(Contact(id++, "이수진", "01026412253", "test4@gmail.com", 0, "pepe19", false))
+        contactList.add(Contact(id++, "개구리", "01026412253", "test4@gmail.com", 0, "pepe8", false))
     }
     override fun createContact(name: String, phone: String, email: String, alarm: Int) {
-        val contactA = Contact(id++, name, phone, email, alarm, "user", false)
+        val contactA = Contact(id++, name, phone, email, alarm, "pepe8", false)
         contactList.add(contactA)
     }
 
@@ -72,6 +72,12 @@ class ContactManagerImpl private constructor() : ContactManager {
      */
     override fun getContactList(): List<Contact> {
         return contactList
+    }
+
+    override fun deleteContactById(id: Int) {
+        getContactById(id)?.let {
+            contactList.remove(it)
+        }
     }
 
     companion object {

@@ -8,5 +8,6 @@ interface ContactManager {
     fun updateContact(id: Int, contact: Contact)
     fun getContactById(id: Int): Contact?
     fun getContactList(): List<Contact>
+    fun deleteContactById(id: Int)
 
 }
