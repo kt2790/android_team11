@@ -14,6 +14,7 @@ import com.example.contactapp.R
 import com.example.contactapp.adapter.ContactAdapter
 import com.example.contactapp.databinding.FragmentContactListBinding
 import com.example.contactapp.manager.ContactManagerImpl
+import com.example.contactapp.ui.activity.MainActivity
 
 class ContactListFragment : Fragment() {
 
@@ -29,7 +30,10 @@ class ContactListFragment : Fragment() {
     private lateinit var gridLayoutManager: GridLayoutManager
 //    private lateinit var currentLayoutManager: RecyclerView.LayoutManager
 
-
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).showToolbar()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,7 +41,7 @@ class ContactListFragment : Fragment() {
         _binding = FragmentContactListBinding.inflate(inflater, container, false)
         recyclerView = binding.recyclerview
 
-
+        (requireActivity() as MainActivity).showToolbar()
 
 //        linearLayoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
 //        gridLayoutManager = GridLayoutManager(requireActivity(), 2)
@@ -65,11 +69,9 @@ class ContactListFragment : Fragment() {
             override fun onClick(view: View, position: Int) {
                 val detailFragment = ContactDetailFragment()
 
-                detailFragment.arguments = Bundle().apply {
-                    bundleOf("ITEM_ID" to adapter.getContact(position).id)
-                }
-
-                Log.d("itemId", "itemid : ${adapter.getContact(position).id}")
+                val bundle = Bundle()
+                bundle.putInt("ITEM_ID", adapter.getContact(position).id)
+                detailFragment.arguments = bundle
 
                 requireActivity().supportFragmentManager.beginTransaction()
                     //.replace(R.id.frameLayout, detailFragment)
@@ -108,6 +110,7 @@ class ContactListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        (requireActivity() as MainActivity).hideToolbar()
         _binding = null
     }
 

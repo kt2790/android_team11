@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.example.contactapp.R
 import com.example.contactapp.databinding.FragmentContactDetailBinding
 import com.example.contactapp.manager.ContactManagerImpl
+import com.example.contactapp.ui.activity.MainActivity
 
 class ContactDetailFragment : Fragment() {
 
@@ -25,6 +26,7 @@ class ContactDetailFragment : Fragment() {
         _binding = FragmentContactDetailBinding.inflate(inflater, container, false)
         itemId = arguments?.getInt("ITEM_ID") ?: 1
 
+        (requireActivity() as MainActivity).hideToolbar()
         return binding.root
     }
 
@@ -58,6 +60,7 @@ class ContactDetailFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        (requireActivity() as MainActivity).showToolbar()
         _binding = null
     }
 }
