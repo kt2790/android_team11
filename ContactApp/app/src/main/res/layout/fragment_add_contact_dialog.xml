@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.dialog.AddContactDialogFragment">
+    tools:context=".ui.dialog.AddContactDialogFragment"
+    android:background="@drawable/dialog_bg">
+
 
     <ImageView
         android:id="@+id/dialogImage"
         android:layout_width="74dp"
         android:layout_height="96dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/baseline_person_24" />
-
-    <EditText
-        android:id="@+id/NameEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Name"
-        android:fontFamily="@font/bm_dohyeon"
-        android:textSize="15dp"/>
+        android:layout_marginTop="32dp"
+        android:src="@drawable/baseline_person_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/NumberEdit"
@@ -33,9 +28,26 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Phone Number"
         android:fontFamily="@font/bm_dohyeon"
-        android:textSize="15dp"/>
+        android:hint="PhoneNumber"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameEdit" />
+
+    <EditText
+        android:id="@+id/NameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/bm_dohyeon"
+        android:hint="Name"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogImage" />
 
     <EditText
         android:id="@+id/EmailEdit"
@@ -44,109 +56,104 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Email"
         android:fontFamily="@font/bm_dohyeon"
-        android:textSize="15dp"/>
+        android:hint="Email"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NumberEdit" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/offbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#E9E5E5"
+        android:padding="13dp"
+        android:paddingStart="10dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="8dp"
+        android:text="OFF"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailEdit" />
 
-        <Button
-            android:id="@+id/offbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:backgroundTint="#499EE3"
-            android:textColor="@color/white"
-            android:text="OFF"
-            android:textSize="15dp" />
+    <Button
+        android:id="@+id/fivebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#E9E5E5"
+        android:padding="13dp"
+        android:text="5분 뒤 알림"
 
-        <Button
-            android:id="@+id/fivebtn"
-            android:layout_width="106dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="5분 뒤 알림"
-            android:textSize="15dp"
-            android:padding="8dp"
-            android:backgroundTint="#E9E5E5"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/offbtn"
+        app:layout_constraintTop_toBottomOf="@+id/EmailEdit" />
 
-        <Button
-            android:id="@+id/tenBtn"
-            android:layout_width="113dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:padding="8dp"
-            android:backgroundTint="#E9E5E5"
-            android:textColor="@color/black"
-            android:text="10분 뒤 알림"
-            android:textSize="15dp" />
+    <Button
+        android:id="@+id/tenBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#E9E5E5"
 
-    </LinearLayout>
-
+        android:padding="13dp"
+        android:text="10분 뒤 알림"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/fivebtn"
+        app:layout_constraintTop_toBottomOf="@+id/EmailEdit" />
 
     <Button
         android:id="@+id/thirtyBtn"
-        android:layout_width="113dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:minWidth="0dp"
-        android:minHeight="0dp"
-        android:padding="8dp"
-        android:text="30분 뒤 알림"
         android:backgroundTint="#E9E5E5"
+        android:padding="13dp"
+        android:text="30분 뒤 알림"
         android:textColor="@color/black"
-        android:textSize="15dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offbtn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center">
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button_shape"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="CANCEL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirtyBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cancelBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
-            android:background="@drawable/button_shape"
-            android:text="CANCEL"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button_shape"
+        android:paddingStart="55dp"
+        android:paddingEnd="55dp"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirtyBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/saveBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:paddingStart="55dp"
-            android:paddingEnd="55dp"
-            android:background="@drawable/button_shape"
-            android:text="SAVE" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
