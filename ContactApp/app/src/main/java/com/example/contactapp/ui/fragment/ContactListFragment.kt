@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,7 @@ import com.example.contactapp.ui.activity.MainActivity
 
 class ContactListFragment : Fragment() {
 
-    private var _binding: FragmentContactListBinding? = null
+    private var _binding: com.example.contactapp.databinding.FragmentContactListBinding? = null
     private val contactManager = ContactManagerImpl.getInstance()
     private val contactList = contactManager.getContactList()
     private val binding get() = _binding!!
@@ -40,6 +41,9 @@ class ContactListFragment : Fragment() {
     ): View? {
         _binding = FragmentContactListBinding.inflate(inflater, container, false)
         recyclerView = binding.recyclerview
+        val dividerItemDecoration =
+            DividerItemDecoration(requireActivity(), LinearLayoutManager.VERTICAL)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
         (requireActivity() as MainActivity).showToolbar()
 
@@ -48,6 +52,8 @@ class ContactListFragment : Fragment() {
 //        currentLayoutManager = linearLayoutManager
 //        recyclerView.layoutManager = currentLayoutManager
 
+
+        adapter = ContactAdapter(contactList)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
 
