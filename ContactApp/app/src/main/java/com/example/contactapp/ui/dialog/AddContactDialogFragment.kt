@@ -155,6 +155,7 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
 
     // btn 클릭 시 색상 변경
     private fun setButtonState(selectedButton: Button) {
+        binding.offbtn.setBackgroundColor(Color.parseColor("#D8BFD8"))
         binding.fivebtn.setBackgroundColor(Color.parseColor("#D8BFD8"))
         binding.tenBtn.setBackgroundColor(Color.parseColor("#D8BFD8"))
         binding.thirtyBtn.setBackgroundColor(Color.parseColor("#D8BFD8"))
