@@ -12,8 +12,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.contactapp.R
+import com.example.contactapp.adapter.ContactAdapter
 import com.example.contactapp.adapter.ViewPagerFragmentStateAdapter
 import com.example.contactapp.databinding.ActivityMainBinding
 import com.example.contactapp.manager.ContactManagerImpl
@@ -21,6 +24,7 @@ import com.example.contactapp.model.Contact
 import com.example.contactapp.ui.activity.MainActivity.Companion.PERMISSION_REQUEST_CODE
 import com.example.contactapp.ui.dialog.AddContactDialogFragment
 import com.example.contactapp.ui.fragment.ContactDetailFragment
+import com.example.contactapp.ui.fragment.ContactListFragment
 import com.example.contactapp.ui.fragment.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.CoroutineScope
@@ -33,6 +37,7 @@ var count = 0
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val fragmentManager = supportFragmentManager
+    //private val fragment = HomeFragment()
     private lateinit var transaction: FragmentTransaction
 
     companion object {
@@ -42,13 +47,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         transaction = fragmentManager.beginTransaction()
         transaction.add(R.id.frameLayout, HomeFragment())
         transaction.commit()
+
 
         setSupportActionBar(binding.mainToolbar)
         supportActionBar?.apply {
@@ -76,8 +81,24 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.list_setting -> Toast.makeText(this, "ListType", Toast.LENGTH_LONG).show()
-            R.id.grid_setting -> Toast.makeText(this, "GridType", Toast.LENGTH_LONG).show()
+            R.id.list_setting -> {
+                val hf = fragmentManager.fragments.filterIsInstance<HomeFragment>()
+                if(hf.isNotEmpty()) {
+                    val homeFragment = hf[0]
+
+                    val clf = (homeFragment.adapter.getFragment(0) as ContactListFragment)
+                    clf.setRvLayout(1)
+                }
+            }
+            R.id.grid_setting -> {
+                val hf = fragmentManager.fragments.filterIsInstance<HomeFragment>()
+                if(hf.isNotEmpty()) {
+                    val homeFragment = hf[0]
+
+                    val clf = (homeFragment.adapter.getFragment(0) as ContactListFragment)
+                    clf.setRvLayout(2)
+                }
+            }
         }
         return true
     }
