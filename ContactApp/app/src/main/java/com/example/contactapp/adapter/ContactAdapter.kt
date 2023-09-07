@@ -5,14 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.contactapp.R
 import com.example.contactapp.databinding.ContactListItem2Binding
 import com.example.contactapp.databinding.ContactListItemBinding
 import com.example.contactapp.databinding.FragmentContactGridListBinding
-import com.example.contactapp.databinding.FragmentContactListBinding
 import com.example.contactapp.model.Contact
 
 
@@ -98,7 +94,18 @@ class ContactAdapter(private var contactList : List<Contact>) : RecyclerView.Ada
 
         fun bind(item: Contact) {
             name.text = item.name
+
             profile.setImageResource(binding.root.context.resources.getIdentifier(contactList[adapterPosition].profile, "drawable", binding.root.context.packageName))
+
+//            if() {
+//                profile.setImageResource(
+//                    binding.root.context.resources.getIdentifier(
+//                        contactList[adapterPosition].profile,
+//                        "drawable",
+//                        binding.root.context.packageName
+//                    )
+//                )
+//            }
 
 //            Glide.with(itemView).load(profile).into(binding.imgListProfile)
 //            Glide.with(itemView).load(like).into(binding.imgListLike)

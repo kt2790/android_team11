@@ -14,7 +14,7 @@ import com.example.contactapp.manager.ContactManagerImpl
 
 class ContactListFragment : Fragment() {
 
-    private var _binding: FragmentContactListBinding? = null
+    private var _binding: com.example.contactapp.databinding.FragmentContactListBinding? = null
     private val contactManager = ContactManagerImpl.getInstance()
     private val contactList = contactManager.getContactList()
     private val binding get() = _binding!!
@@ -41,6 +41,8 @@ class ContactListFragment : Fragment() {
 //        currentLayoutManager = linearLayoutManager
 //        recyclerView.layoutManager = currentLayoutManager
 
+
+        adapter = ContactAdapter(contactList)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = GridLayoutManager(requireActivity(), 2)
 
