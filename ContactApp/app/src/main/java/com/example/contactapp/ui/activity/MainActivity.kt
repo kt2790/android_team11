@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             getContactsList()
         } else {
             if (shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
-                Toast.makeText(this, "주소록 접근 권한이 필요합니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "주소록 접근 권한이 필요합니다.", Toast.LENGTH_LONG).show()
             } else {
                 ActivityCompat.requestPermissions(
                     this,
