@@ -65,7 +65,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Image"
-                app:strokeColor="#FFFFFF"
+                app:strokeColor="#32000000"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -118,7 +118,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/first_cardview"
-                app:strokeColor="#FFFFFF"
+                app:strokeColor="#32000000"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -178,7 +178,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/second_cardview"
-                app:strokeColor="#FFFFFF"
+                app:strokeColor="#32000000"
                 app:strokeWidth="1dp">
 
                 <LinearLayout

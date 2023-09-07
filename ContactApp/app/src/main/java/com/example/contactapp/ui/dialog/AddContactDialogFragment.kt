@@ -112,13 +112,12 @@ class AddContactDialogFragment(private val contactListFragment: ContactListFragm
             val name = binding.NameEdit.text.toString()
             val phoneNumber = binding.NumberEdit.text.toString()
             val email = binding.EmailEdit.text.toString()
-            val alarm = 0
 
 
             // ContactManagerImpl 클래스의 싱글톤 객체를 가져옴
             val contactManagerImpl: ContactManagerImpl = ContactManagerImpl.getInstance()
             // 가져온 객체를 이용해서 새로운 데이터 생성
-            contactManagerImpl.createContact(name, phoneNumber, email, alarm)
+            contactManagerImpl.createContact(name, phoneNumber, email, alarmNumber)
 
             val updateContactList = contactManagerImpl.getContactList()
             contactListFragment.adapter.setContactList(updateContactList)
