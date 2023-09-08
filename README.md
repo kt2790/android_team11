@@ -1,4 +1,4 @@
-# 페페네 하우스
+# 🏡 페페네 하우스
 Contact App (수정 예정)
 
 ## :scroll: 목차
@@ -17,12 +17,12 @@ Contact App (수정 예정)
 2023.09.11 발표 예정 
 
 ## :two_men_holding_hands: 멤버 구성 :couple: 
-|             | 이름           | 깃허브          |     
-|-------------|---------------|---------------|
-| <img src="https://github.com/kt2790.png" width="30" height="30"> | 배근태 | [깃허브](https://github.com/kt2790) <br>
-| <img src="https://github.com/boomshh.png" width="30" height="30"> | 김현준 | [깃허브](https://github.com/boomshh) <br>
-| <img src="https://github.com/Odin5din.png" width="30" height="30"> | 김지견 | [깃허브](https://github.com/Odin5din/) <br>
-| <img src="https://github.com/sooj36.png" width="30" height="30"> | 이수진 | [깃허브](https://github.com/sooj36)
+|             | 이름           | 깃허브          | 블로그           |     
+|-------------|---------------|---------------|-----------------|
+| <img src="https://github.com/kt2790.png" width="30" height="30"> | 배근태 | [깃허브](https://github.com/kt2790) | [블로그](https://velog.io/@kt2790) 
+| <img src="https://github.com/boomshh.png" width="30" height="30"> | 김현준 | [깃허브](https://github.com/boomshh) | [블로그](https://velog.io/@boomshh)
+| <img src="https://github.com/Odin5din.png" width="30" height="30"> | 김지견 | [깃허브](https://github.com/Odin5din/) | [블로그](https://odin5din.tistory.com/)
+| <img src="https://github.com/sooj36.png" width="30" height="30"> | 이수진 | [깃허브](https://github.com/sooj36) | [블로그](https://velog.io/@sooj23)
 ----------------------------------
 
 :runner: 배근태
@@ -82,6 +82,9 @@ Contact App (수정 예정)
 - 연락처 권한 가져오기
   - https://jdroid.tistory.com/24
   - https://bada744.tistory.com/140
+
+- Fragment
+  - https://developer.android.com/guide/components/activities/activity-lifecycle?hl=ko
    
 
 ## :notebook: 팀 노션
