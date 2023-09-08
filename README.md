@@ -35,8 +35,7 @@ Contact App (수정 예정)
 - [x]  event 버튼 값에 맞게 알림 설정
 - [x]  알림 클릭 시 앱으로 이동
 - [x]  `ContactManagerImpl` 객체를 가져와서 contactList에 새로운 데이터 생성
-- [x]  EditText에 입력된 텍스트를 contactList에 새 연락처로 저장
-- [x]  클릭한 버튼 표시
+- [x]  버튼 스타일 초기화 및 변경
 - [x]  리드미 작성
 
 
@@ -80,12 +79,8 @@ Contact App (수정 예정)
   - 마이페이지와 유사한 화면이고 연락처에 있는 사용자의 상세 정보를 보여주는 화면
 
 ## :paperclip: 참고 자료
-→ 연락처 권한 가져오기
-
-
+- 연락처 권한 가져오기
   - https://jdroid.tistory.com/24
-
-
   - https://bada744.tistory.com/140
    
 
