@@ -6,6 +6,6 @@ Contact App
 2023.09.04 ~ 2023.09.07
 
 ## 멤버 구성
-이수진(https://github.com/sooj36)
+![팀원 이수진](https://github.com/sooj36)
 
 ## 개발 환경
