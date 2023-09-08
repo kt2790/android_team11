@@ -18,7 +18,7 @@ Contact App (수정 예정)
 
 ## :two_men_holding_hands: 멤버 구성 :couple: 
 <img src="https://github.com/kt2790.png" width="50" height="50"
-[팀장 배근태](https://github.com/kt2790)
+[팀장 배근태](https://github.com/kt2790)>
 
 
 !
