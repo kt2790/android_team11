@@ -83,10 +83,10 @@ Contact App (수정 예정)
 → 연락처 권한 가져오기
 
 
-https://jdroid.tistory.com/24
+  - https://jdroid.tistory.com/24
 
 
-https://bada744.tistory.com/140
+  - https://bada744.tistory.com/140
    
 
 ## :notebook: 팀 노션
