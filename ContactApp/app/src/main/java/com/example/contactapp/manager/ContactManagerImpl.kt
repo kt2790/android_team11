@@ -95,5 +95,3 @@ class ContactManagerImpl private constructor() : ContactManager {
 
 }
 
-val imagePath = "\\app\\src\\main\\res\\drawable"
-val imageUri = Uri.parse(imagePath)

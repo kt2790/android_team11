@@ -123,26 +123,6 @@ class ContactAdapter(private var contactList: List<Contact>, private val contact
             }
         }
 
-//        val like = holder.binding.imgListLike
-//        val like2 = holder.binding.imgList2Like
-//
-//        if (contactList[adapterPosition].favorite)
-//            like.setImageResource(
-//                binding.root.context.resources.getIdentifier(
-//                    "baseline_favorite_24",
-//                    "drawable",
-//                    binding.root.context.packageName
-//                )
-//            )
-//        else
-//            like.setImageResource(
-//                binding.root.context.resources.getIdentifier(
-//                    "baseline_favorite_border_24",
-//                    "drawable",
-//                    binding.root.context.packageName
-//                )
-//            )
-
 
     }
 

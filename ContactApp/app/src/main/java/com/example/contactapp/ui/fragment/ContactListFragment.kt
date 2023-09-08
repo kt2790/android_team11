@@ -46,31 +46,12 @@ class ContactListFragment : Fragment(), ContactDeleteListener {
 
         (requireActivity() as MainActivity).showToolbar()
 
-//        linearLayoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-//        gridLayoutManager = GridLayoutManager(requireActivity(), 2)
-//        currentLayoutManager = linearLayoutManager
-//        recyclerView.layoutManager = currentLayoutManager
-
-
         adapter = ContactAdapter(contactList, this, requireActivity())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
 
         itemTouchHelper = ItemTouchHelper(ContactListItemHelper(requireActivity(), adapter))
         itemTouchHelper.attachToRecyclerView(recyclerView)
-
-//        binding.changeButton.setOnClickListener {
-//
-//            currentLayoutManager = if (currentLayoutManager == linearLayoutManager) {
-//                gridLayoutManager
-//            } else {
-//                linearLayoutManager
-//            }
-//            recyclerView.layoutManager = currentLayoutManager
-//
-//            adapter.notifyDataSetChanged()
-//        }
-
 
         adapter.itemClick = object : ContactAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
@@ -81,8 +62,6 @@ class ContactListFragment : Fragment(), ContactDeleteListener {
                 detailFragment.arguments = bundle
 
                 requireActivity().supportFragmentManager.beginTransaction()
-                    //.replace(R.id.frameLayout, detailFragment)
-                    //.addToBackStack(null)
                     .add(R.id.frameLayout, detailFragment)
                     .addToBackStack(null)
                     .commit()
