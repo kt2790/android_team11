@@ -1,6 +1,7 @@
 package com.example.contactapp.ui.fragment
 
 import android.os.Bundle
+import android.telephony.PhoneNumberUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.example.contactapp.manager.ContactManagerImpl
 import com.example.contactapp.model.Contact
 import com.example.contactapp.ui.activity.MainActivity
 import com.example.contactapp.util.NotificationConvert
+import java.util.Locale
 
 
 class MyPageFragment : Fragment() {
@@ -42,7 +44,7 @@ class MyPageFragment : Fragment() {
 
         binding.Image.setImageResource(R.drawable.pepe9)
         binding.MyName.text = contact.name
-        binding.MobileTX.text = contact.phone
+        binding.MobileTX.text = PhoneNumberUtils.formatNumber(contact.phone, Locale.getDefault().country)
         binding.EventTx.text = NotificationConvert.convert(contact.alarm)
         binding.EmailTx.text = contact.email
 }
