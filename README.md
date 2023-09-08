@@ -25,6 +25,13 @@ Contact App (수정 예정)
 | <img src="https://github.com/sooj36.png" width="30" height="30"> | 이수진 | [깃허브](https://github.com/sooj36)
 ----------------------------------
 
+:runner: 배근태
+
+:runner: 김현준
+
+:runner: 김지견
+
+:runner: 이수진
 
 
 ## 기능 설명
