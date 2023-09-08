@@ -3,6 +3,7 @@ package com.example.contactapp.ui.fragment
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.telephony.PhoneNumberUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.example.contactapp.databinding.FragmentContactDetailBinding
 import com.example.contactapp.manager.ContactManagerImpl
 import com.example.contactapp.ui.activity.MainActivity
 import com.example.contactapp.util.NotificationConvert
+import java.util.Locale
 
 class ContactDetailFragment : Fragment() {
 
@@ -40,7 +42,7 @@ class ContactDetailFragment : Fragment() {
         val profileImg = contact.profile.ifEmpty { "pepe8" }
         binding.detailName.text = contact.name
         binding.detailEventState.text = NotificationConvert.convert(contact.alarm)
-        binding.detailPhoneNumber.text = contact.phone
+        binding.detailPhoneNumber.text = PhoneNumberUtils.formatNumber(contact.phone, Locale.getDefault().country)
         binding.detailEmailText.text = contact.email
         binding.detailProfileImg.setImageResource(resources.getIdentifier(profileImg, "drawable", binding.root.context.packageName))
 
