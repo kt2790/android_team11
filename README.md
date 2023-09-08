@@ -7,8 +7,14 @@ Contact App
 
 ## 멤버 구성
 ![팀장 배근태](https://github.com/kt2790)
+
+
 ![팀원 김현준](https://github.com/boomshh)
+
+
 ![팀원 김지견](https://github.com/Odin5din/)
+
+
 ![팀원 이수진](https://github.com/sooj36)
 
 
