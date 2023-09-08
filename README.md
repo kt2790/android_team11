@@ -17,7 +17,7 @@ Contact App (수정 예정)
 2023.09.11 발표 예정 
 
 ## :two_men_holding_hands: 멤버 구성 :couple: 
-!
+![](https://github.com/kt2790.png)
 [팀장 배근태](https://github.com/kt2790)
 
 
