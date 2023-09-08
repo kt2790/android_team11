@@ -23,8 +23,8 @@ Contact App (수정 예정)
 | <img src="https://github.com/boomshh.png" width="30" height="30"> | 김현준 | [깃허브](https://github.com/boomshh) | [블로그](https://velog.io/@boomshh)
 | <img src="https://github.com/Odin5din.png" width="30" height="30"> | 김지견 | [깃허브](https://github.com/Odin5din/) | [블로그](https://odin5din.tistory.com/)
 | <img src="https://github.com/sooj36.png" width="30" height="30"> | 이수진 | [깃허브](https://github.com/sooj36) | [블로그](https://velog.io/@sooj23)
-----------------------------------
 
+## 
 :runner: 배근태
 - [x]  전체적인 팀빌딩
 - [x]  PPT작성
@@ -32,9 +32,8 @@ Contact App (수정 예정)
 
 :runner: 김현준
 - [x]  다이얼로그 레이아웃
-- [x]  event 버튼 값에 맞게 알림 설정
-- [x]  알림 클릭 시 앱으로 이동
-- [x]  `ContactManagerImpl` 객체를 가져와서 contactList에 새로운 데이터 생성
+- [x]  `alarmNumber` 값에 맞게 알림 생성 / 알림 클릭 시 앱으로 이동
+- [x]  `ContactManagerImpl` 객체를 가져와서 `contactList`에 새로운 데이터 생성
 - [x]  버튼 스타일 초기화 및 변경
 - [x]  리드미 작성
 
@@ -56,7 +55,6 @@ Contact App (수정 예정)
   - 툴바와 프래그먼트가 올라갈 프레임 레이아웃으로 구성
   - 초기에 앱을 실행해서 메인화면으로 들어오게 되면, 프레임 레이아웃에 HomeFragment가 로드
  
-    
 - #### HomeFragment
    - 초기화면에 해당하는 프래그먼트로써 뷰페이저와 탭 레이아웃으로 구성되어, 연락처 리스트 화면 & 마이 페이지 화면을 전환
  
@@ -64,7 +62,6 @@ Contact App (수정 예정)
    - 연락처 목록을 업데이트 하기 위해 ContactListFragment를 인자로 받고 다이얼로그의 UI와 기능을 나타내기 위해 DialogFragment를 상속받는 클래스
    - 현재 프래그먼트에서 onCreateView, onViewCreated, onStart 함수로 생명주기를 관리
    
-
 - #### ContactListFragment
   - 리사이클러 뷰 화면을 나타내는 프래그먼트
   - 리사이클러뷰는 연락처목록(id, 이름, 번호, email alarm, profile, favorite)의 값을 가진 어댑터가 있습니다. 어댑터의 아이템 클릭 시 ContactDetailFragment로 이동
@@ -84,6 +81,7 @@ Contact App (수정 예정)
   - https://bada744.tistory.com/140
 
 - Fragment
+  - https://developer.android.com/guide/fragments?hl=ko
   - https://developer.android.com/guide/components/activities/activity-lifecycle?hl=ko
    
 
