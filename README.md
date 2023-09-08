@@ -26,11 +26,23 @@ Contact App (수정 예정)
 ----------------------------------
 
 :runner: 배근태
+- [x]  전체적인 팀빌딩
+- [x]  PPT작성
+
 
 :runner: 김현준
+- [x]  다이얼로그 레이아웃
+- [x]  event 버튼 값에 맞게 알림 설정
+- [x]  알림 클릭 시 앱으로 이동
+- [x]  `ContactManagerImpl` 객체를 가져와서 contactList에 새로운 데이터 생성
+- [x]  EditText에 입력된 텍스트를 contactList에 새 연락처로 저장
+- [x]  클릭한 버튼 표시
 - [x]  리드미 작성
 
+
 :runner: 김지견
+- [x]  발표
+
 
 :runner: 이수진
 - [x]  마이페이지 레이아웃
